@@ -1,0 +1,12 @@
+services:
+  redis:
+    image: redis:7-alpine
+    ports: ["6379:6379"]
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: dbms
+    ports: ["3306:3306"]
+    command: --default-authentication-plugin=mysql_native_password
